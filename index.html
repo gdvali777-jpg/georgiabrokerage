@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Properties by Biograpi — უძრავი ქონება თბილისში</title>
+<meta name="description" content="უძრავი ქონების ბროკერული მომსახურება თბილისში — ბინების გაყიდვა, გაქირავება და საინვესტიციო კონსულტაცია.">
+<meta property="og:title" content="Properties by Biograpi">
+<meta property="og:description" content="უძრავი ქონების ბროკერული მომსახურება თბილისში.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Serif+Georgian:wght@600;700;800&display=swap">
+<style>
+:root{
+  --ground:#F1F4EF; --surface:#FFFFFF; --surface-2:#E6EDE4;
+  --ink:#0C201A; --muted:#4E6259; --line:#D3DECE;
+  --emerald:#0E5C46; --emerald-mid:#0B4636; --emerald-deep:#072E24;
+  --gold:#9C7414; --gold-bright:#D9AE43; --on-dark:#E9F1EB; --on-dark-muted:#A8C0B4;
+  --shadow:0 18px 44px -28px rgba(7,46,36,.55); --radius:14px;
+  --ff-display:"Noto Serif Georgian",Georgia,"Times New Roman",serif;
+  --ff-body:"Noto Sans Georgian",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#06120E; --surface:#0D1F19; --surface-2:#132A22;
+    --ink:#E6EFE9; --muted:#9BB2A6; --line:#1D362C;
+    --emerald:#107256; --emerald-mid:#0B4636; --emerald-deep:#051D17;
+    --gold:#DDB35A; --gold-bright:#E6C063;
+    --shadow:0 18px 44px -28px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#06120E; --surface:#0D1F19; --surface-2:#132A22;
+  --ink:#E6EFE9; --muted:#9BB2A6; --line:#1D362C;
+  --emerald:#107256; --emerald-mid:#0B4636; --emerald-deep:#051D17;
+  --gold:#DDB35A; --gold-bright:#E6C063;
+  --shadow:0 18px 44px -28px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ground);color:var(--ink);font-family:var(--ff-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--ff-display);font-weight:700;line-height:1.18;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+img,svg{max-width:100%}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--gold-bright);outline-offset:3px;border-radius:6px}
+
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--gold);margin:0 0 14px}
+.section{padding-block:76px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.section-head h2{font-size:clamp(1.65rem,3.4vw,2.35rem)}
+.link-more{font-size:.9rem;font-weight:600;text-decoration:none;color:var(--emerald);border-bottom:1.5px solid color-mix(in srgb,var(--emerald) 35%,transparent);padding-bottom:2px;white-space:nowrap}
+.link-more:hover{border-bottom-color:var(--gold-bright)}
+
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;gap:20px;height:74px}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;flex-shrink:0}
+.brand b{font-family:var(--ff-display);font-size:1.12rem;letter-spacing:.09em;font-weight:800}
+.brand span{font-size:.58rem;letter-spacing:.3em;color:var(--gold);font-weight:700;margin-top:5px}
+.nav{display:flex;gap:26px;margin-inline:auto}
+.nav a{text-decoration:none;font-size:.93rem;font-weight:500;color:var(--muted);padding-block:6px;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink)}
+.nav a.is-active{color:var(--ink);border-bottom-color:var(--gold-bright)}
+.top-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:none;cursor:pointer;text-decoration:none;font-weight:600;font-size:.9rem;padding:11px 20px;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold-bright);color:#20180A}
+.btn-gold:hover{box-shadow:0 8px 20px -10px var(--gold-bright)}
+.btn-emerald{background:var(--emerald);color:#F2FAF6}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--emerald)}
+.menu-btn{display:none;background:transparent;border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer}
+.mobile-nav{display:none;border-top:1px solid var(--line);padding:14px 20px 20px}
+.mobile-nav a{display:block;padding:11px 0;text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+.mobile-nav a:last-of-type{border-bottom:none}
+
+.hero{position:relative;background:var(--emerald-deep);color:var(--on-dark);overflow:hidden}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,46,36,.72),rgba(5,32,26,.82))}
+.hero-in{position:relative;padding-block:92px 150px;text-align:center}
+.hero h1{font-size:clamp(2.1rem,6vw,4.1rem);letter-spacing:-.01em;color:#FFF}
+.hero h1 em{font-style:normal;color:var(--gold-bright)}
+.hero-sub{margin:20px auto 0;max-width:56ch;color:var(--on-dark-muted);font-size:clamp(.98rem,1.6vw,1.12rem)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.tag{font-size:.8rem;font-weight:600;padding:7px 15px;border-radius:999px;border:1px solid rgba(233,241,235,.28);color:var(--on-dark);background:rgba(7,46,36,.42)}
+.tag i{font-style:normal;color:var(--gold-bright);margin-inline-end:7px}
+
+.search-shell{margin-top:-96px;position:relative;z-index:5}
+.search{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}
+.tabs{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:4px;margin-bottom:20px}
+.tab{border:none;background:transparent;border-radius:999px;padding:9px 22px;font-weight:600;font-size:.9rem;cursor:pointer;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--emerald);color:#F2FAF6}
+.fields{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px;align-items:end}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field label{font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.field select{appearance:none;width:100%;background:var(--surface-2);border:1px solid transparent;border-radius:11px;padding:12px 38px 12px 14px;font-weight:600;font-size:.92rem;cursor:pointer;
+background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+background-position:calc(100% - 20px) 53%,calc(100% - 14px) 53%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.field select:hover{border-color:var(--emerald)}
+.search .btn{padding:13px 28px;height:46px}
+
+.result-line{font-size:.88rem;color:var(--muted);margin-bottom:22px}
+.result-line b{color:var(--ink);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--emerald) 40%,var(--line))}
+.card-media{position:relative;aspect-ratio:4/3;max-width:100%;background:var(--surface-2)}
+.card-media svg,.card-media img{display:block;width:100%;height:100%;object-fit:cover}
+.badges{position:absolute;inset:14px 14px auto;display:flex;justify-content:space-between;gap:8px}
+.badge{font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(7,46,36,.72);color:#EAF2ED;backdrop-filter:blur(4px)}
+.badge.sale{background:var(--gold-bright);color:#20180A}
+.badge.rent{background:#0E5C46;color:#EAF2ED}
+.card-body{padding:20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.price{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.price small{font-size:.8rem;font-weight:600;color:var(--muted);font-family:var(--ff-body)}
+.card h3{font-size:1.02rem;font-weight:700;font-family:var(--ff-body);line-height:1.45}
+.addr{font-size:.86rem;color:var(--muted);display:flex;gap:7px;align-items:flex-start}
+.addr svg{flex:0 0 15px;margin-top:3px;color:var(--gold)}
+.specs{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:16px;font-size:.84rem;color:var(--muted);flex-wrap:wrap}
+.specs b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.specs .detail{margin-inline-start:auto;color:var(--emerald);font-weight:600;text-decoration:none;white-space:nowrap}
+.specs .detail:hover{color:var(--gold)}
+.empty{grid-column:1/-1;text-align:center;padding:56px 20px;border:1.5px dashed var(--line);border-radius:var(--radius);color:var(--muted)}
+
+.services{background:var(--emerald-deep);color:var(--on-dark)}
+.services .eyebrow{color:var(--gold-bright)}
+.services h2{color:#FFF}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid rgba(233,241,235,.16);margin-top:38px}
+.svc{padding:30px 26px 34px;border-bottom:1px solid rgba(233,241,235,.16);border-inline-end:1px solid rgba(233,241,235,.16);display:flex;flex-direction:column;gap:12px}
+.svc:last-child{border-inline-end:none}
+.svc-num{font-family:var(--ff-display);font-size:.8rem;font-weight:700;color:var(--gold-bright);letter-spacing:.1em}
+.svc h3{font-size:1.15rem;color:#FFF}
+.svc p{font-size:.92rem;color:var(--on-dark-muted)}
+
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.about-grid h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:18px}
+.about-grid p{color:var(--muted);max-width:62ch}
+.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px;padding-top:28px;border-top:2px solid var(--gold-bright)}
+.stat strong{display:block;font-family:var(--ff-display);font-size:2.35rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:.82rem;color:var(--muted)}
+.about-art{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.about-art svg,.about-art img{display:block;width:100%;height:auto}
+
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:24px}
+.person{text-align:center}
+.avatar{width:100%;aspect-ratio:1/1;max-width:100%;border-radius:var(--radius);display:grid;place-items:center;overflow:hidden;
+background:linear-gradient(155deg,var(--emerald) 0%,var(--emerald-deep) 100%);color:var(--gold-bright);
+font-family:var(--ff-display);font-size:2.4rem;font-weight:800;margin-bottom:16px;border:1px solid var(--line)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.person h3{font-size:1.02rem;font-family:var(--ff-body);font-weight:700}
+.person span{font-size:.84rem;color:var(--muted)}
+.person a{display:inline-block;margin-top:8px;font-size:.82rem;color:var(--emerald);font-weight:600;text-decoration:none}
+.person a:hover{color:var(--gold)}
+
+.cta{background:var(--gold-bright);color:#20180A}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;padding-block:46px}
+.cta h2{font-size:clamp(1.4rem,2.8vw,1.95rem);color:#20180A}
+.cta p{color:#4A3A12;margin-top:8px}
+.cta .btn{background:var(--emerald-deep);color:#F2FAF6}
+
+.foot{background:var(--emerald-deep);color:var(--on-dark)}
+.foot-in{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.25fr;gap:38px;padding-block:58px 34px}
+.foot h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-bright);margin:0 0 16px;font-weight:700}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.foot a{text-decoration:none;color:var(--on-dark-muted);font-size:.92rem}
+.foot a:hover{color:#FFF}
+.foot .brand b{color:#FFF}
+.foot-note{font-size:.88rem;color:var(--on-dark-muted);margin-top:16px;max-width:34ch}
+.foot-row{display:flex;gap:9px;align-items:flex-start;font-size:.92rem;color:var(--on-dark-muted);margin-bottom:11px}
+.foot-row svg{flex:0 0 15px;margin-top:4px;color:var(--gold-bright)}
+.socials{display:flex;gap:10px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(233,241,235,.24);color:var(--on-dark)}
+.socials a:hover{background:var(--gold-bright);color:#20180A;border-color:var(--gold-bright)}
+.foot-bottom{border-top:1px solid rgba(233,241,235,.16);padding-block:20px 30px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.82rem;color:var(--on-dark-muted)}
+.foot-bottom a{font-size:.82rem}
+
+@media (max-width:1000px){
+  .nav{display:none}
+  .menu-btn{display:block;margin-inline-start:auto}
+  .top-actions .phone-btn{display:none}
+  .fields{grid-template-columns:repeat(2,1fr)}
+  .fields .btn{grid-column:1/-1;width:100%}
+  .about-grid{grid-template-columns:1fr;gap:34px}
+  .foot-in{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media (max-width:620px){
+  .section{padding-block:56px}
+  .hero-in{padding-block:64px 128px}
+  .search{padding:18px;border-radius:16px}
+  .fields{grid-template-columns:1fr}
+  .stats{gap:26px}
+  .foot-in{grid-template-columns:1fr}
+  .top-actions .wa-btn span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#top"><b id="brandName">PROPERTIES</b><span id="brandTagline">BY BIOGRAPI</span></a>
+    <nav class="nav" aria-label="მთავარი ნავიგაცია">
+      <a href="#top" class="is-active">მთავარი</a>
+      <a href="#offers">შეთავაზებები</a>
+      <a href="#projects">პროექტები</a>
+      <a href="#services">სერვისები</a>
+      <a href="#about">ჩვენ შესახებ</a>
+      <a href="#contact">კონტაქტი</a>
+    </nav>
+    <div class="top-actions">
+      <a class="btn btn-emerald wa-btn" id="waTop" href="https://wa.me/995322500505">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.7L6.9 20A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3c-.3.3-.9.9-.9 2.1 0 1.3.9 2.5 1 2.6.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5 0 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.2l-.4-.1Z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a class="btn btn-ghost phone-btn" id="phoneTop" href="tel:+995322500505">032 2 500 505</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="მენიუ">
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1h18M1 7h18M1 13h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" hidden aria-label="მობილური ნავიგაცია">
+    <a href="#offers">შეთავაზებები</a>
+    <a href="#projects">პროექტები</a>
+    <a href="#services">სერვისები</a>
+    <a href="#about">ჩვენ შესახებ</a>
+    <a href="#contact">კონტაქტი</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div id="heroArt"></div>
+    <div class="wrap hero-in">
+      <h1 id="heroTitle">იპოვე შენი <em>ოცნების სახლი</em></h1>
+      <p class="hero-sub" id="heroSub"></p>
+      <div class="hero-tags" id="heroTags"></div>
+    </div>
+  </section>
+
+  <div class="wrap search-shell">
+    <form class="search" id="searchForm" role="search" aria-label="ქონების ძებნა">
+      <div class="tabs" role="tablist" aria-label="გარიგების ტიპი">
+        <button type="button" class="tab" role="tab" aria-selected="true" data-deal="sale">ყიდვა</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" data-deal="rent">ქირავდება</button>
+      </div>
+      <div class="fields">
+        <div class="field"><label for="fType">ქონების ტიპი</label><select id="fType"></select></div>
+        <div class="field"><label for="fDistrict">უბანი</label><select id="fDistrict"></select></div>
+        <div class="field"><label for="fProject">პროექტი</label><select id="fProject"></select></div>
+        <div class="field"><label for="fRooms">ბინის ტიპი</label><select id="fRooms"></select></div>
+        <button class="btn btn-gold" type="submit">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4" stroke-linecap="round"/></svg>
+          ძებნა
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <section class="section" id="offers">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow" id="offersEyebrow"></p><h2 id="offersTitle"></h2></div>
+        <a class="link-more" href="#offers">ყველა შეთავაზების ნახვა →</a>
+      </div>
+      <p class="result-line" id="resultLine" aria-live="polite"></p>
+      <div class="grid" id="offerGrid"></div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap section">
+      <p class="eyebrow" id="svcEyebrow"></p>
+      <h2 id="svcTitle"></h2>
+      <div class="svc-list" id="svcList"></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow" id="aboutEyebrow"></p>
+          <h2 id="aboutTitle"></h2>
+          <p id="aboutText"></p>
+          <div class="stats" id="aboutStats"></div>
+        </div>
+        <div class="about-art" id="projects"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="team" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow" id="teamEyebrow"></p><h2 id="teamTitle"></h2></div>
+        <a class="link-more" href="#contact">ყველა წევრის ნახვა →</a>
+      </div>
+      <div class="team" id="teamGrid"></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-in">
+      <div><h2 id="ctaTitle"></h2><p id="ctaText"></p></div>
+      <a class="btn" id="ctaBtn" href="#contact"></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <div class="brand"><b id="brandName2">PROPERTIES</b><span id="brandTagline2">BY BIOGRAPI</span></div>
+        <p class="foot-note" id="footNote"></p>
+        <div class="socials">
+          <a id="fbLink" href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V14h2.7v8h3.5Z"/></svg></a>
+          <a id="igLink" href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>ნავიგაცია</h4>
+        <ul>
+          <li><a href="#top">მთავარი</a></li>
+          <li><a href="#offers">შეთავაზებები</a></li>
+          <li><a href="#projects">პროექტები</a></li>
+          <li><a href="#services">სერვისები</a></li>
+          <li><a href="#about">ჩვენ შესახებ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>კონტაქტი</h4>
+        <ul id="footContacts"></ul>
+      </div>
+      <div>
+        <h4>მისამართი</h4>
+        <div class="foot-row">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 14s5-4.2 5-8A5 5 0 0 0 3 6c0 3.8 5 8 5 8Z"/><circle cx="8" cy="6" r="1.8"/></svg>
+          <span id="footAddress"></span>
+        </div>
+        <div class="foot-row">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 4.6V8l2.4 1.6" stroke-linecap="round"/></svg>
+          <span id="footHours"></span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span id="footCopy"></span>
+      <span style="display:flex;gap:18px" id="footLegal"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   კონტენტი იტვირთება content/site.json-იდან (Decap CMS ამ ფაილს
+   არედაქტირებს). თუ ფაილი მიუწვდომელია, გამოიყენება SEED.
+   ============================================================ */
+const SEED = {"brand":{"name":"PROPERTIES","tagline":"BY BIOGRAPI"},"hero":{"title":"იპოვე შენი","titleAccent":"ოცნების სახლი","subtitle":"ბიოგრაფი ლივინგი — სანდო პარტნიორი თბილისის პრემიუმ კლასის უძრავ ქონებაში.","image":"","tags":[]},"offersSection":{"eyebrow":"აქტიური შეთავაზებები","title":"ხელმისაწვდომი ბინები თბილისში"},"offers":[],"servicesSection":{"eyebrow":"ჩვენი სერვისები","title":"სრული მომსახურება"},"services":[],"about":{"eyebrow":"ჩვენ შესახებ","title":"ბიოგრაფი ლივინგი","text":"","image":"","stats":[]},"teamSection":{"eyebrow":"ჩვენი გუნდი","title":"ჩვენი ბროკერები"},"team":[],"cta":{"title":"","text":"","buttonLabel":"დაკავშირება","buttonUrl":"#contact"},"contacts":{"phonePrimary":"0322 500 505","phoneSecondary":"","whatsapp":"https://wa.me/995322500505","email":"","address":"","hours":"","facebook":"#","instagram":"#"},"footer":{"note":"","copyright":"","legalLinks":[]}};
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt || ""; };
+const pin = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 14s5-4.2 5-8A5 5 0 0 0 3 6c0 3.8 5 8 5 8Z"/><circle cx="8" cy="6" r="1.8"/></svg>';
+
+const PALETTES = [
+  {sky:"#0F5642", wall:"#F1F4EF", trim:"#D9AE43", shade:"#0B4636"},
+  {sky:"#0B4636", wall:"#E9EFE6", trim:"#C89B32", shade:"#083026"},
+  {sky:"#12604A", wall:"#F4F1E6", trim:"#D9AE43", shade:"#0A3B2E"}
+];
+
+function facadeSVG(seed){
+  const p = PALETTES[seed % PALETTES.length];
+  let w = "";
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) {
+    const lit = ((r * 4 + c + seed) % 3 === 0);
+    w += `<rect x="${58 + c * 72}" y="${92 + r * 58}" width="46" height="38" rx="4" fill="${lit ? p.trim : p.shade}" fill-opacity="${lit ? .92 : .55}"/>`;
+  }
+  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="ობიექტის ილუსტრაცია">
+    <rect width="400" height="300" fill="${p.sky}"/><rect x="30" y="52" width="340" height="248" fill="${p.wall}"/>
+    <rect x="30" y="52" width="340" height="14" fill="${p.trim}"/>${w}
+    <rect x="30" y="262" width="340" height="38" fill="${p.shade}"/>
+    <rect x="176" y="262" width="48" height="38" fill="${p.trim}" fill-opacity=".9"/>
+    <g fill="${p.shade}" fill-opacity=".35"><circle cx="70" cy="258" r="20"/><circle cx="330" cy="258" r="20"/></g></svg>`;
+}
+
+const SKYLINE = `<svg class="hero-art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B3A2D"/><stop offset="55%" stop-color="#072E24"/><stop offset="100%" stop-color="#05201A"/></linearGradient>
+<linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D9AE43" stop-opacity=".22"/><stop offset="70%" stop-color="#D9AE43" stop-opacity="0"/></linearGradient>
+<linearGradient id="tA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F4C3A"/><stop offset="100%" stop-color="#083026"/></linearGradient>
+<linearGradient id="tB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0C4033"/><stop offset="100%" stop-color="#061F19"/></linearGradient>
+</defs>
+<rect width="1440" height="620" fill="url(#sky)"/><circle cx="1180" cy="120" r="300" fill="url(#glow)"/>
+<g opacity=".9">
+<rect x="80" y="250" width="150" height="370" fill="url(#tB)"/><rect x="255" y="180" width="190" height="440" fill="url(#tA)"/>
+<rect x="470" y="300" width="120" height="320" fill="url(#tB)"/><rect x="615" y="150" width="215" height="470" fill="url(#tA)"/>
+<rect x="855" y="260" width="140" height="360" fill="url(#tB)"/><rect x="1020" y="200" width="200" height="420" fill="url(#tA)"/>
+<rect x="1245" y="310" width="130" height="310" fill="url(#tB)"/></g>
+<g fill="#D9AE43" opacity=".5">
+<rect x="278" y="210" width="14" height="9"/><rect x="306" y="210" width="14" height="9"/><rect x="362" y="210" width="14" height="9"/>
+<rect x="278" y="248" width="14" height="9"/><rect x="334" y="248" width="14" height="9"/><rect x="390" y="248" width="14" height="9"/>
+<rect x="306" y="286" width="14" height="9"/><rect x="362" y="286" width="14" height="9"/><rect x="418" y="286" width="14" height="9"/>
+<rect x="640" y="182" width="14" height="9"/><rect x="696" y="182" width="14" height="9"/><rect x="780" y="182" width="14" height="9"/>
+<rect x="668" y="222" width="14" height="9"/><rect x="724" y="222" width="14" height="9"/><rect x="780" y="222" width="14" height="9"/>
+<rect x="640" y="262" width="14" height="9"/><rect x="752" y="262" width="14" height="9"/>
+<rect x="668" y="302" width="14" height="9"/><rect x="724" y="302" width="14" height="9"/><rect x="796" y="302" width="14" height="9"/>
+<rect x="1046" y="232" width="14" height="9"/><rect x="1102" y="232" width="14" height="9"/><rect x="1172" y="232" width="14" height="9"/>
+<rect x="1074" y="272" width="14" height="9"/><rect x="1144" y="272" width="14" height="9"/>
+<rect x="1046" y="312" width="14" height="9"/><rect x="1116" y="312" width="14" height="9"/><rect x="1186" y="312" width="14" height="9"/>
+<rect x="104" y="288" width="12" height="8"/><rect x="152" y="288" width="12" height="8"/><rect x="200" y="288" width="12" height="8"/>
+<rect x="128" y="330" width="12" height="8"/><rect x="176" y="330" width="12" height="8"/>
+<rect x="880" y="298" width="12" height="8"/><rect x="928" y="298" width="12" height="8"/><rect x="964" y="298" width="12" height="8"/>
+<rect x="904" y="340" width="12" height="8"/><rect x="952" y="340" width="12" height="8"/></g>
+<rect y="560" width="1440" height="60" fill="#05201A" opacity=".85"/></svg>`;
+
+const COURTYARD = `<svg viewBox="0 0 560 420" role="img" aria-label="თბილისური ეზოს ილუსტრაცია">
+<defs><linearGradient id="ab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0F5642"/><stop offset="100%" stop-color="#072E24"/></linearGradient></defs>
+<rect width="560" height="420" fill="url(#ab)"/>
+<g stroke="#D9AE43" stroke-opacity=".55" fill="none" stroke-width="2"><rect x="60" y="70" width="440" height="300"/><rect x="100" y="110" width="360" height="220"/><path d="M100 185h360M100 260h360M220 110v220M340 110v220"/></g>
+<g fill="#D9AE43" fill-opacity=".85">
+<rect x="128" y="135" width="26" height="34" rx="13"/><rect x="186" y="135" width="26" height="34" rx="13"/><rect x="248" y="135" width="26" height="34" rx="13"/><rect x="368" y="135" width="26" height="34" rx="13"/>
+<rect x="128" y="210" width="26" height="34" rx="13"/><rect x="248" y="210" width="26" height="34" rx="13"/><rect x="306" y="210" width="26" height="34" rx="13"/><rect x="424" y="210" width="26" height="34" rx="13"/>
+<rect x="186" y="285" width="26" height="34" rx="13"/><rect x="368" y="285" width="26" height="34" rx="13"/></g>
+<rect x="252" y="285" width="56" height="85" fill="#D9AE43" fill-opacity=".9"/><path d="M252 285h56" stroke="#072E24" stroke-width="3"/></svg>`;
+
+let DATA = SEED;
+let deal = "sale";
+
+function fillSelect(id, label, values){
+  const el = document.getElementById(id);
+  el.innerHTML = `<option value="">${esc(label)}</option>` +
+    values.map(v => `<option value="${esc(v.value)}">${esc(v.label)}</option>`).join("");
+}
+
+function buildFilters(){
+  const offers = DATA.offers || [];
+  const uniq = key => [...new Set(offers.map(o => o[key]).filter(Boolean))];
+  const typeLabels = {flat:"ბინა", commercial:"კომერციული", house:"სახლი", land:"მიწა"};
+  const roomLabels = {studio:"სტუდიო", "1":"1-ოთახიანი", "2":"2-ოთახიანი", "3":"3-ოთახიანი", "4":"4+ ოთახიანი"};
+
+  fillSelect("fType", "ყველა ტიპი", uniq("type").map(v => ({value:v, label:typeLabels[v] || v})));
+  fillSelect("fDistrict", "ყველა უბანი", uniq("district").map(v => ({value:v, label:v})));
+  fillSelect("fProject", "ყველა პროექტი", uniq("project").map(v => ({value:v, label:v})));
+  fillSelect("fRooms", "ყველა", uniq("rooms").map(v => ({value:v, label:roomLabels[v] || v})));
+}
+
+function cardHTML(o, i){
+  const dealLabel = o.deal === "rent" ? "ქირავდება" : "იყიდება";
+  const typeLabel = o.type === "commercial" ? "კომერციული" : "ბინა";
+  const beds = Number(o.beds) > 0 ? `${esc(o.beds)} საძინებელი` : "კომერციული";
+  const media = o.image
+    ? `<img src="${esc(o.image)}" alt="${esc(o.title)}" loading="lazy">`
+    : facadeSVG(i + 1);
+  return `<article class="card">
+    <div class="card-media">${media}
+      <div class="badges"><span class="badge">${typeLabel}</span><span class="badge ${esc(o.deal)}">${dealLabel}</span></div>
+    </div>
+    <div class="card-body">
+      <p class="price">${esc(o.price)}<small>${esc(o.per)}</small></p>
+      <h3>${esc(o.title)}</h3>
+      <p class="addr">${pin}<span>${esc(o.address)}</span></p>
+      <div class="specs"><span><b>${esc(o.area)}</b> მ²</span><span>${beds}</span>
+      <a class="detail" href="#offers">დეტალურად →</a></div>
+    </div></article>`;
+}
+
+function renderOffers(){
+  const type = document.getElementById("fType").value;
+  const district = document.getElementById("fDistrict").value;
+  const project = document.getElementById("fProject").value;
+  const rooms = document.getElementById("fRooms").value;
+
+  const rows = (DATA.offers || []).filter(o =>
+    (o.deal || "sale") === deal &&
+    (!type || o.type === type) && (!district || o.district === district) &&
+    (!project || o.project === project) && (!rooms || o.rooms === rooms));
+
+  document.getElementById("offerGrid").innerHTML = rows.length
+    ? rows.map(cardHTML).join("")
+    : `<div class="empty"><p><b>ამ პარამეტრებით ობიექტი ვერ მოიძებნა.</b></p><p>შეცვალეთ უბანი ან პროექტი, ან დაგვიკავშირდით — შევარჩევთ ვარიანტს თქვენთვის.</p></div>`;
+
+  document.getElementById("resultLine").innerHTML =
+    `<b>${rows.length}</b> შეთავაზება · ${deal === "sale" ? "იყიდება" : "ქირავდება"}`;
+}
+
+function render(){
+  const d = DATA;
+  document.title = (d.seo && d.seo.title) || document.title;
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta && d.seo && d.seo.description) meta.setAttribute("content", d.seo.description);
+
+  set("brandName", d.brand.name); set("brandTagline", d.brand.tagline);
+  set("brandName2", d.brand.name); set("brandTagline2", d.brand.tagline);
+
+  document.getElementById("heroArt").innerHTML = d.hero.image
+    ? `<img class="hero-art" src="${esc(d.hero.image)}" alt=""><div class="hero-scrim"></div>`
+    : SKYLINE;
+  document.getElementById("heroTitle").innerHTML = `${esc(d.hero.title)} <em>${esc(d.hero.titleAccent)}</em>`;
+  set("heroSub", d.hero.subtitle);
+  document.getElementById("heroTags").innerHTML =
+    (d.hero.tags || []).map(t => `<span class="tag"><i>◆</i>${esc(t.label)}</span>`).join("");
+
+  set("offersEyebrow", d.offersSection.eyebrow); set("offersTitle", d.offersSection.title);
+  set("svcEyebrow", d.servicesSection.eyebrow); set("svcTitle", d.servicesSection.title);
+  document.getElementById("svcList").innerHTML = (d.services || []).map((s, i) =>
+    `<div class="svc"><span class="svc-num">${String(i + 1).padStart(2, "0")}</span>
+     <h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`).join("");
+
+  set("aboutEyebrow", d.about.eyebrow); set("aboutTitle", d.about.title); set("aboutText", d.about.text);
+  document.getElementById("aboutStats").innerHTML = (d.about.stats || []).map(s =>
+    `<div class="stat"><strong>${esc(s.value)}</strong><span>${esc(s.label)}</span></div>`).join("");
+  document.getElementById("projects").innerHTML = d.about.image
+    ? `<img src="${esc(d.about.image)}" alt="${esc(d.about.title)}" loading="lazy">` : COURTYARD;
+
+  set("teamEyebrow", d.teamSection.eyebrow); set("teamTitle", d.teamSection.title);
+  document.getElementById("teamGrid").innerHTML = (d.team || []).map(p => {
+    const initials = String(p.name || "").split(/\s+/).map(w => w[0] || "").slice(0, 2).join("");
+    const av = p.photo ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">` : esc(initials);
+    return `<div class="person"><div class="avatar" aria-hidden="true">${av}</div>
+      <h3>${esc(p.name)}</h3><span>${esc(p.role)}</span>
+      ${p.phone ? `<a href="tel:${esc(String(p.phone).replace(/\s/g, ""))}">${esc(p.phone)}</a>` : ""}</div>`;
+  }).join("");
+
+  set("ctaTitle", d.cta.title); set("ctaText", d.cta.text);
+  const ctaBtn = document.getElementById("ctaBtn");
+  ctaBtn.textContent = d.cta.buttonLabel; ctaBtn.href = d.cta.buttonUrl || "#contact";
+
+  const c = d.contacts;
+  document.getElementById("waTop").href = c.whatsapp || "#contact";
+  document.getElementById("phoneTop").href = "tel:" + String(c.phonePrimary || "").replace(/\s/g, "");
+  document.getElementById("phoneTop").textContent = c.phonePrimary || "";
+  document.getElementById("fbLink").href = c.facebook || "#";
+  document.getElementById("igLink").href = c.instagram || "#";
+  document.getElementById("footContacts").innerHTML = [
+    c.phonePrimary && `<li><a href="tel:${esc(String(c.phonePrimary).replace(/\s/g, ""))}">${esc(c.phonePrimary)}</a></li>`,
+    c.phoneSecondary && `<li><a href="tel:${esc(String(c.phoneSecondary).replace(/\s/g, ""))}">${esc(c.phoneSecondary)}</a></li>`,
+    c.email && `<li><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></li>`
+  ].filter(Boolean).join("");
+  set("footAddress", c.address); set("footHours", c.hours);
+  set("footNote", d.footer.note); set("footCopy", d.footer.copyright);
+  document.getElementById("footLegal").innerHTML = (d.footer.legalLinks || [])
+    .map(l => `<a href="${esc(l.url || "#")}">${esc(l.label)}</a>`).join("");
+
+  buildFilters();
+  renderOffers();
+}
+
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", String(x === t)));
+  deal = t.dataset.deal;
+  renderOffers();
+}));
+["fType","fDistrict","fProject","fRooms"].forEach(id =>
+  document.getElementById(id).addEventListener("change", renderOffers));
+document.getElementById("searchForm").addEventListener("submit", e => {
+  e.preventDefault();
+  renderOffers();
+  document.getElementById("offers").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+const menuBtn = document.getElementById("menuBtn"), mobileNav = document.getElementById("mobileNav");
+menuBtn.addEventListener("click", () => {
+  const open = menuBtn.getAttribute("aria-expanded") === "true";
+  menuBtn.setAttribute("aria-expanded", String(!open));
+  mobileNav.hidden = open;
+});
+mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  mobileNav.hidden = true; menuBtn.setAttribute("aria-expanded", "false");
+}));
+
+fetch("content/site.json", {cache: "no-cache"})
+  .then(r => r.ok ? r.json() : Promise.reject(new Error("no content")))
+  .then(json => { DATA = Object.assign({}, SEED, json); })
+  .catch(() => { /* რჩება SEED */ })
+  .finally(render);
+</script>
+</body>
+</html>
