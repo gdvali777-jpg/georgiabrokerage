@@ -1,0 +1,206 @@
+####################################################################
+#  Decap CMS — Properties by Biograpi
+#  შეცვალე: OWNER/REPO და base_url (Cloudflare Worker-ის მისამართი)
+####################################################################
+
+backend:
+  name: github
+  repo: gdvali777-jpg/georgiabrokerage
+  branch: main
+  base_url: https://gb-oauth.YOUR-SUBDOMAIN.workers.dev   # ← OAuth proxy (Cloudflare Worker)
+  auth_endpoint: auth
+  commit_messages:
+    update: 'CMS: განახლდა {{collection}} — {{path}}'
+    uploadMedia: 'CMS: ატვირთულია {{path}}'
+    deleteMedia: 'CMS: წაშლილია {{path}}'
+
+# ლოკალური ტესტირებისთვის: npx decap-server && გახსენი localhost/admin
+local_backend: true
+
+publish_mode: simple
+site_url: https://gdvali777-jpg.github.io/georgiabrokerage/
+display_url: https://gdvali777-jpg.github.io/georgiabrokerage/
+
+media_folder: "images/uploads"
+# ⚠️ როცა georgiabrokerage.ge დომენს მიაბამ, შეცვალე: "/images/uploads"
+public_folder: "/georgiabrokerage/images/uploads"
+
+collections:
+  - name: site
+    label: "საიტის კონტენტი"
+    files:
+      - name: home
+        label: "მთავარი გვერდი"
+        file: "content/site.json"
+        description: "აქ იცვლება საიტის ყველა ტექსტი, ბინები, გუნდი და კონტაქტები."
+        fields:
+
+          - label: "SEO"
+            name: seo
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "გვერდის სათაური (browser tab / Google)", name: title, widget: string }
+              - { label: "აღწერა (meta description)", name: description, widget: text }
+
+          - label: "ბრენდი"
+            name: brand
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "სახელი", name: name, widget: string }
+              - { label: "ქვესათაური", name: tagline, widget: string }
+
+          - label: "ჰერო (მთავარი ბანერი)"
+            name: hero
+            widget: object
+            fields:
+              - { label: "სათაური — პირველი ნაწილი", name: title, widget: string }
+              - { label: "სათაური — ოქროსფერი ნაწილი", name: titleAccent, widget: string }
+              - { label: "ქვესათაური", name: subtitle, widget: text }
+              - { label: "ფონური ფოტო (არასავალდებულო)", name: image, widget: image, required: false, hint: "თუ ცარიელია, გამოჩნდება ილუსტრაცია. რეკომენდებული ზომა: 2000×900px" }
+              - label: "ჩიპები (პროექტები)"
+                name: tags
+                widget: list
+                label_singular: "ჩიპი"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "ტექსტი", name: label, widget: string }
+
+          - label: "შეთავაზებების სექციის სათაური"
+            name: offersSection
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "პატარა წარწერა", name: eyebrow, widget: string }
+              - { label: "სათაური", name: title, widget: string }
+
+          - label: "ბინების შეთავაზებები"
+            name: offers
+            widget: list
+            label_singular: "შეთავაზება"
+            summary: "{{fields.title}} — {{fields.price}}"
+            fields:
+              - { label: "დასახელება", name: title, widget: string }
+              - { label: "ფასი", name: price, widget: string, hint: "მაგ. $245,000 ან ₾1,200" }
+              - { label: "ფასის დანამატი", name: per, widget: string, required: false, hint: "მაგ. /თვე — გაქირავებისთვის" }
+              - label: "გარიგების ტიპი"
+                name: deal
+                widget: select
+                options:
+                  - { label: "იყიდება", value: "sale" }
+                  - { label: "ქირავდება", value: "rent" }
+              - label: "ქონების ტიპი"
+                name: type
+                widget: select
+                options:
+                  - { label: "ბინა", value: "flat" }
+                  - { label: "კომერციული", value: "commercial" }
+                  - { label: "სახლი", value: "house" }
+              - { label: "უბანი", name: district, widget: string, hint: "მაგ. ვაკე — ეს ტექსტი ავტომატურად ხვდება ძებნის ფილტრში" }
+              - { label: "პროექტი", name: project, widget: string, required: false, hint: "მაგ. საკენი / მატიანი / ჰისნი" }
+              - label: "ოთახების რაოდენობა"
+                name: rooms
+                widget: select
+                options:
+                  - { label: "სტუდიო", value: "studio" }
+                  - { label: "1-ოთახიანი", value: "1" }
+                  - { label: "2-ოთახიანი", value: "2" }
+                  - { label: "3-ოთახიანი", value: "3" }
+                  - { label: "4+ ოთახიანი", value: "4" }
+              - { label: "ფართი (მ²)", name: area, widget: number, value_type: int, min: 1 }
+              - { label: "საძინებლების რაოდენობა", name: beds, widget: number, value_type: int, min: 0, default: 1 }
+              - { label: "მისამართი", name: address, widget: string }
+              - { label: "ფოტო", name: image, widget: image, required: false, hint: "თუ ცარიელია, გამოჩნდება ილუსტრაცია. რეკომენდებული: 1200×900px" }
+
+          - label: "სერვისების სექციის სათაური"
+            name: servicesSection
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "პატარა წარწერა", name: eyebrow, widget: string }
+              - { label: "სათაური", name: title, widget: string }
+
+          - label: "სერვისები"
+            name: services
+            widget: list
+            label_singular: "სერვისი"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "დასახელება", name: title, widget: string }
+              - { label: "აღწერა", name: text, widget: text }
+
+          - label: "ჩვენ შესახებ"
+            name: about
+            widget: object
+            fields:
+              - { label: "პატარა წარწერა", name: eyebrow, widget: string }
+              - { label: "სათაური", name: title, widget: string }
+              - { label: "ტექსტი", name: text, widget: text }
+              - { label: "ფოტო", name: image, widget: image, required: false }
+              - label: "სტატისტიკა"
+                name: stats
+                widget: list
+                label_singular: "მაჩვენებელი"
+                summary: "{{fields.value}} — {{fields.label}}"
+                fields:
+                  - { label: "ციფრი", name: value, widget: string }
+                  - { label: "წარწერა", name: label, widget: string }
+
+          - label: "გუნდის სექციის სათაური"
+            name: teamSection
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "პატარა წარწერა", name: eyebrow, widget: string }
+              - { label: "სათაური", name: title, widget: string }
+
+          - label: "გუნდი"
+            name: team
+            widget: list
+            label_singular: "თანამშრომელი"
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields:
+              - { label: "სახელი და გვარი", name: name, widget: string }
+              - { label: "პოზიცია", name: role, widget: string }
+              - { label: "ტელეფონი", name: phone, widget: string, required: false }
+              - { label: "ფოტო", name: photo, widget: image, required: false, hint: "კვადრატული ფოტო, მაგ. 600×600px. თუ ცარიელია, გამოჩნდება ინიციალები." }
+
+          - label: "CTA ბანერი"
+            name: cta
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "სათაური", name: title, widget: string }
+              - { label: "ტექსტი", name: text, widget: string }
+              - { label: "ღილაკის წარწერა", name: buttonLabel, widget: string }
+              - { label: "ღილაკის ბმული", name: buttonUrl, widget: string }
+
+          - label: "კონტაქტები"
+            name: contacts
+            widget: object
+            fields:
+              - { label: "ძირითადი ტელეფონი", name: phonePrimary, widget: string }
+              - { label: "დამატებითი ტელეფონი", name: phoneSecondary, widget: string, required: false }
+              - { label: "WhatsApp ბმული", name: whatsapp, widget: string, required: false }
+              - { label: "ელ. ფოსტა", name: email, widget: string, required: false }
+              - { label: "მისამართი", name: address, widget: string }
+              - { label: "სამუშაო საათები", name: hours, widget: string }
+              - { label: "Facebook", name: facebook, widget: string, required: false }
+              - { label: "Instagram", name: instagram, widget: string, required: false }
+
+          - label: "ფუტერი"
+            name: footer
+            widget: object
+            collapsed: true
+            fields:
+              - { label: "მოკლე აღწერა", name: note, widget: text }
+              - { label: "საავტორო უფლებები", name: copyright, widget: string }
+              - label: "სამართლებრივი ბმულები"
+                name: legalLinks
+                widget: list
+                label_singular: "ბმული"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "წარწერა", name: label, widget: string }
+                  - { label: "მისამართი", name: url, widget: string }
