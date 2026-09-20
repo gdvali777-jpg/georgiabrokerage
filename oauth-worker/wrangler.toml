@@ -1,0 +1,11 @@
+name = "gb-oauth"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+# შეცვალე საიტის რეალურ მისამართზე (უსაფრთხოებისთვის სასურველია)
+ALLOWED_ORIGIN = "https://georgiabrokerage.ge"
+
+# GITHUB_CLIENT_ID და GITHUB_CLIENT_SECRET დაამატე secret-ებად:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
